@@ -1,3 +1,19 @@
+try:
+    import sys
+    import os
+
+    sys.path.append(
+        os.path.abspath(
+            os.path.join(
+                os.path.dirname(__file__),
+                '../calculadora'
+            )
+        )
+    )
+except BaseException:
+    raise
+
+
 from calculadora import my_sum
 from unittest import TestCase, main
 
@@ -32,4 +48,5 @@ class TestCalculadora(TestCase):
             my_sum(11, '10')
 
 
-main()
+if __name__ == '__main__':
+    main()
